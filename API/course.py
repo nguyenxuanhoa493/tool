@@ -35,4 +35,11 @@ def download_import_attendance(self, iid_course):
     r = self.send('POST', '/import/data/download-template-to-import', payload)
     return r['objects']['url']
 
-    
+
+def get_roles(self, iid_course):
+    payload = {
+        'applied_target_iid': iid_course,
+        'type': 'course'
+    }
+     r = self.send('POST', '/abac-role/api/get-role-options', payload)
+    return r['result']

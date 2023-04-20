@@ -63,7 +63,7 @@ class Domain:
         r = self.send('POST', '/user/detail', payload)
         return r['result']
 
-    def add_gv(self,iid_course,list_teacher):
+    def add_gv(self,iid_course,list_teacher, roles):
         payload = {'course_iid': iid_course}
         for i in range(len(list_teacher)):
             iid = list_teacher[i]
@@ -71,9 +71,18 @@ class Domain:
             temp = {
                     'o['+str(i)+'][name]': teacher['name'],
                     'o['+str(i)+'][iid]': teacher['iid'],
-                    'o['+str(i)+'][id]': teacher['id'],
-                    'o['+str(i)+'][roles][0]': 2003979,
-                    'o['+str(i)+'][roles][1]': 2003983
+                    'o['+str(i)+'][id]': teacher['id']
             }
+            for j in range(len(roles)):
+                temp.update({'o['+str(i)+'][roles]['+str(j)+']': roles[j]['value']})
             payload.update(temp)
+
         r = self.send('POST','/course/staff/add-staff',payload)
+
+    def get_roles(self, iid_course):
+        payload = {
+            'applied_target_iid': iid_course,
+            'type': 'course'
+        }
+        r = self.send('POST', '/abac-role/api/get-role-options', payload)
+        return r['result']

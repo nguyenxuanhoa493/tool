@@ -5,7 +5,7 @@ sys.path.insert(0, r'C:\Users\nguye\OneDrive\Tools\API')
 
 import uni
 school = uni.Domain('hth', 'hth')
-course_iid = 2008158
+course_iid = 2003978
 teacher_master = [267517]
 
 
@@ -17,6 +17,8 @@ list_teacher = teacher_master
 for session in data:
     list_teacher += session['teacher']
     session['teacher']+=teacher_master
-    school.add_session(course_iid,session)
-    
-school.add_gv(course_iid, list(set(list_teacher)))
+    # school.add_session(course_iid,session)
+
+roles = school.get_roles(course_iid)
+#gán list gv có tất cả các quyền vào khóa học
+school.add_gv(course_iid, list(set(list_teacher)), roles)
