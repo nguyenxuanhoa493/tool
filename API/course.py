@@ -41,5 +41,41 @@ def get_roles(self, iid_course):
         'applied_target_iid': iid_course,
         'type': 'course'
     }
-     r = self.send('POST', '/abac-role/api/get-role-options', payload)
+    r = self.send('POST', '/abac-role/api/get-role-options', payload)
     return r['result']
+
+def learn_video(self, iid_course, iid_video):
+    payload = {'progress[0][tco_iid]': iid_video,
+                'progress[0][p]': '100',
+                'progress[0][pd][n]': '10',
+                'progress[0][pd][i][0]': '0',
+                'progress[0][pd][i][1]': '1',
+                'progress[0][pd][i][2]': '2',
+                'progress[0][pd][i][3]': '3',
+                'progress[0][pd][i][4]': '4',
+                'progress[0][pd][i][5]': '5',
+                'progress[0][pd][i][6]': '6',
+                'progress[0][pd][i][7]': '7',
+                'progress[0][pd][i][8]': '8',
+                'progress[0][pd][i][9]': '9',
+                'progress[0][time_spent]': '300',
+                'ciid': iid_course}
+    r = self.send('POST', '/trckr2/save', payload)
+    print(r)
+
+def learn_pdf(self, iid_course, iid_pdf):
+    payload = {'progress[0][tco_iid]': iid_pdf,
+                'progress[0][p]': '100',
+                'progress[0][time_spent]': '300',
+                'ciid': iid_course}
+    r = self.send('POST', '/trckr2/save', payload)
+
+def get_syllabus_of_course(self, iid_course):
+    payload = {'ntype': 'course', 'iid': iid_course}
+    r = self.send('POST', '/api/v2/syllabus/get', payload)
+    return r['result']['credit_syllabus']
+
+def get_content_syllabus(self, iid_syllabus):
+    payload = {'ntype': 'syllabus', 'iid': iid_syllabus, 'depth': '-1'}
+    r = self.send('POST', '/api/v2/syllabus/get', payload)
+    return r['result']['children']
