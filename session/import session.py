@@ -9,10 +9,14 @@ course_iid = 2008158
 teacher_master = [267517]
 
 
-data = [{'name':'CĐ 3. Thảo luận','date':'2023-4-23','time':'Tối','teacher':[267499]}]
+data = [{'name':'CĐ 2: Tổng quan về hành chính nhà nước','date':'2023-4-20','time':'Tối','teacher':[267497]},
+{'name':'CĐ 2. Thảo luận','date':'2023-4-21','time':'Tối','teacher':[267497]},
+{'name':'CĐ 3: Công vụ, công chức','date':'2023-4-22','time':'Tối','teacher':[267499]},
+{'name':'CĐ 3. Thảo luận','date':'2023-4-23','time':'Tối','teacher':[267499]}]
+list_teacher = teacher_master
 for session in data:
+    list_teacher += session['teacher']
     session['teacher']+=teacher_master
     school.add_session(course_iid,session)
-
-
     
+school.add_gv(course_iid, list(set(list_teacher)))

@@ -53,3 +53,27 @@ class Domain:
             print(f"Đã tạo buổi học: {sesion['name']} > Ngày: {sesion['date']}")
         else:
             print(r)
+
+    def detail(self,user_iid):
+        payload ={
+            'ntype': 'user',
+            'editing_syllabus': '1',
+            'iid': user_iid
+        }
+        r = self.send('POST', '/user/detail', payload)
+        return r['result']
+
+    def add_gv(self,iid_course,list_teacher):
+        payload = {'course_iid': iid_course}
+        for i in range(len(list_teacher)):
+            iid = list_teacher[i]
+            teacher = self.detail(iid)
+            temp = {
+                    'o['+str(i)+'][name]': teacher['name'],
+                    'o['+str(i)+'][iid]': teacher['iid'],
+                    'o['+str(i)+'][id]': teacher['id'],
+                    'o['+str(i)+'][roles][0]': 2003979,
+                    'o['+str(i)+'][roles][1]': 2003983
+            }
+            payload.update(temp)
+        r = self.send('POST','/course/staff/add-staff',payload)
