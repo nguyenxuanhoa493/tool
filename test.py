@@ -8,3 +8,4 @@ import course
 school = info.Domain('mtholding', 'TDMT')
 iid_course = 4023763
 course.learn_video(school, iid_course, 4310217)
+print('test')
