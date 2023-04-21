@@ -1,10 +1,15 @@
-import sys
-sys.path.insert(0, '/Users/mamang/Library/CloudStorage/OneDrive-Personal/Tools/API')
-sys.path.insert(0, r'C:\Users\nguye\OneDrive\Tools\API')
+from pytube import Playlist
+import urllib.request
+import json
+import urllib
 
-import info
-import course
+def get_tittle(link):
+    params = {"format": "json", "url": link}
+    url = "https://www.youtube.com/oembed"
+    query_string = urllib.parse.urlencode(params)
+    url = url + "?" + query_string
 
-school = info.Domain('mtholding', 'TDMT')
-iid_course = 4023763
-course.learn_video(school, iid_course, 4310217)
+    with urllib.request.urlopen(url) as response:
+        response_text = response.read()
+        data = json.loads(response_text.decode())
+    return data['title']
