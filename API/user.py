@@ -28,3 +28,15 @@ def get_teacher(self):
     }
     r = self.send('POST', '/user/api/search', payload)
     return r['result']
+
+def add_roles(self,iid_user):
+    payload = {
+        'user_iid': iid_user,
+        'applied_target_iid': 7707412,
+        'fetchRoleOptionParams[type]': 'school',
+        'fetchRoleOptionParams[applied_target_iid]': 7707412,
+        'role_iids[0]': 7708702
+    }
+    r = self.send('POST', '/user-abac-role/update', payload)
+    print(r)
+

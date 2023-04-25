@@ -5,19 +5,19 @@ sys.path.insert(0, r'C:\Users\nguye\OneDrive\Tools\API')
 
 import uni
 school = uni.Domain('hth', 'hth')
-course_iid = 2003978
+course_iid = 2008158
 teacher_master = [267517]
 
 
-data = [{'name':'CĐ 2: Tổng quan về hành chính nhà nước','date':'2023-4-20','time':'Tối','teacher':[267497]},
-{'name':'CĐ 2. Thảo luận','date':'2023-4-21','time':'Tối','teacher':[267497]},
+data = [{'name':'CĐ 2. Thảo luận','date':'2023-4-21','time':'Tối','teacher':[267497]},
 {'name':'CĐ 3: Công vụ, công chức','date':'2023-4-22','time':'Tối','teacher':[267499]},
-{'name':'CĐ 3. Thảo luận','date':'2023-4-23','time':'Tối','teacher':[267499]}]
+{'name':'CĐ 3. Thảo luận','date':'2023-4-23','time':'Tối','teacher':[267499]},]
+for session in data:
+    session['teacher']+=teacher_master
+    school.add_session(course_iid,session)
 list_teacher = teacher_master
 for session in data:
     list_teacher += session['teacher']
-    session['teacher']+=teacher_master
-    # school.add_session(course_iid,session)
 
 roles = school.get_roles(course_iid)
 #gán list gv có tất cả các quyền vào khóa học

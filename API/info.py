@@ -21,6 +21,7 @@ class Domain:
         self.param = {'submit': '1', '_sand_ajax': '1', '_sand_platform': '3', '_sand_readmin': '1', '_sand_is_wan': 'false',
                       '_sand_ga_sessionToken': '', '_sand_ga_browserToken': '', '_sand_domain': domain, '_sand_masked': ''}
         self.user = login(self,user)
+        self.url = 'https://'+domain+'.lotuslms.com'
 
     def send(self,type, url, payload, files =[]):
         url = SERVER + url

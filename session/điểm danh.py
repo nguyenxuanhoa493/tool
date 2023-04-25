@@ -7,8 +7,17 @@ import course
 from session import attendance_one_user 
 
 school = info.Domain('bvl','bvl')
-iid_course = 6611032
-checked=""""""
+iid_course = 6663631
+checked="""D1019A36GS
+D1019A36GP
+D1019A36GT
+D1019A36GL
+D1019A36GW
+D1019A36GQ
+D1019A36GX
+D1019A36GY
+D1019A36H0
+D1019A35EL"""
 checked = checked.split('\n')
 print(checked)
 list_user = course.list_user(school,iid_course)
