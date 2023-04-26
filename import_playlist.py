@@ -8,8 +8,8 @@ from video import get_tittle
 from pytube import Playlist
 
 school = info.Domain('exchangecentury', 'exchangecentury')
-iid_syllabus = 7706835
-url_playlist = 'https://www.youtube.com/watch?v=fDdn2HtmM6c&list=PLpeoU1to5k68W6QlnKC1ZF3sYXlhJMcSb'
+iid_syllabus = 7710929
+url_playlist = 'https://www.youtube.com/watch?v=s7MhLPyGA3Y&list=PLpeoU1to5k69FaxNP2Xmp9XLYSC5T_9mY&index=2'
 pls = Playlist(url_playlist)
 video = []
 for item in pls:
