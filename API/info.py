@@ -12,6 +12,7 @@ def login(self, user):
         r = r['result']
         info = {'_sand_token': r['token'],'_sand_uiid': r['iid'], '_sand_uid': r['id']}
         self.param.update(info)
+        print(f"Đã login bằng tài khoản: {us}")
         return r
     except:
         return r['message']
