@@ -8,46 +8,6 @@ import category
 
 data =[
  {
-   "name": "Định hướng nghề nghiệp",
-   "code": 301001960
- },
- {
-   "name": "Ngôn ngữ học đối chiếu",
-   "code": 301000347
- },
- {
-   "name": "Thực tế ngoài trường NNA",
-   "code": 301001576
- },
- {
-   "name": "Tiếng Anh bán hàng",
-   "code": 301001963
- },
- {
-   "name": "Tiếng Anh y khoa",
-   "code": 301001962
- },
- {
-   "name": "Nghe nói 5",
-   "code": 301000725
- },
- {
-   "name": "Khóa luận tốt nghiệp - NNA",
-   "code": 301001577
- },
- {
-   "name": "Ngữ nghĩa học nâng cao",
-   "code": 301000727
- },
- {
-   "name": "Thực tập tốt nghiệp - NNA",
-   "code": 301000517
- },
- {
-   "name": "Tiểu luận tốt nghiệp - NNA",
-   "code": 301002517
- },
- {
    "name": "Chủ nghĩa xã hội - khoa học",
    "code": 301001826
  },
@@ -72,12 +32,28 @@ data =[
    "code": 301000665
  },
  {
-   "name": "Tin học căn bản",
-   "code": 301001673
+   "name": "Tiếng Anh bán hàng",
+   "code": 301001963
  },
  {
-   "name": "Cơ sở văn hóa Việt Nam",
-   "code": 301000060
+   "name": "Tiếng Anh y khoa",
+   "code": 301001962
+ },
+ {
+   "name": "Nghe nói 5",
+   "code": 301000725
+ },
+ {
+   "name": "Kỹ năng làm P.R",
+   "code": 301001977
+ },
+ {
+   "name": "Thực tập tốt nghiệp - NNA",
+   "code": 301000517
+ },
+ {
+   "name": "Tin học căn bản",
+   "code": 301001673
  },
  {
    "name": "Pháp văn 1",
@@ -86,6 +62,22 @@ data =[
  {
    "name": "Pháp văn 2",
    "code": 301002480
+ },
+ {
+   "name": "Ngữ pháp 1",
+   "code": 301000357
+ },
+ {
+   "name": "Viết 1",
+   "code": 301002507
+ },
+ {
+   "name": "Cơ sở văn hóa Việt Nam",
+   "code": 301000060
+ },
+ {
+   "name": "Định hướng nghề nghiệp",
+   "code": 301001960
  },
  {
    "name": "Đọc 1",
@@ -100,12 +92,24 @@ data =[
    "code": 301000350
  },
  {
-   "name": "Ngữ pháp 1",
-   "code": 301000357
+   "name": "Ngữ nghĩa học nâng cao",
+   "code": 301000727
  },
  {
-   "name": "Viết 1",
-   "code": 301002507
+   "name": "Ngôn ngữ học đối chiếu",
+   "code": 301000347
+ },
+ {
+   "name": "Thực tế ngoài trường NNA",
+   "code": 301001576
+ },
+ {
+   "name": "Tiểu luận tốt nghiệp - NNA",
+   "code": 301002517
+ },
+ {
+   "name": "Khóa luận tốt nghiệp - NNA",
+   "code": 301001577
  }
 ]
 school = info.Domain('tdu2', 'tdu2')

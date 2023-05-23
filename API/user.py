@@ -40,3 +40,16 @@ def add_roles(self,iid_user):
     r = self.send('POST', '/user-abac-role/update', payload)
     print(r)
 
+def new_teacher(self,name,code):
+    payload = {
+        'name': name,
+        'code': code,
+        'mail': code+'@gmail.com',
+        'pass': 123,
+        'pass_retype': 123,
+        '_sand_step':'staff',
+        'user_organizations[0]': '2045706'
+    }
+
+    r = self.send('POST', '/user/new', payload)
+    print(r)

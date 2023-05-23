@@ -1,3 +1,8 @@
+class Syllabus:
+    def __init__(self,school,iid_syllabus) -> None:
+        self.detail = detail(school,iid_syllabus)
+
+
 def add_video_youtube(self, iid_sco, video):
     payload = {
         'type': 'video',
@@ -20,6 +25,8 @@ def detail(self, iid_syllabus):
     'iid': iid_syllabus
     }
     r = self.send('POST', '/api/v2/syllabus/get', payload)
+
+    print(f"Đã load thông tin syllabus {iid_syllabus} - {r['result']['name']}")
     return r['result']
 
 def update(self, iid_syllabus, content):
@@ -106,3 +113,4 @@ def get_abstract_role(self, iid_syllabus):
     }
     r = self.send('POST', '/abac-role/api/get-abstract-roles-options-for-specific-role-type', payload)
     return r['result'][0]['iid']
+
